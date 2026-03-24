@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/teladelogin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <meta name="description"
+        content="Acesse o GeoAgro, sua plataforma completa de monitoramento agrícola e agricultura de precisão. Gerencie suas colheitas com tecnologia.">
+    <title>Acesso - GeoAgro | Monitoramento Agrícola</title>
+</head>
+
+<body>
+    <main class="container">
+        <section class="informacao">
+            <div class="info-content">
+                <h1 class="geoagrologin">GeoAgro</h1>
+                <p class="descricao">Bem-vindo ao GeoAgro, a plataforma de geotecnologia para agricultura de precisão.
+                    Realize o acesso para utilizar suas ferramentas e recursos exclusivos.</p>
+            </div>
+        </section>
+        <section class="formulario">
+            <div class="login">
+                <h2>Acesse sua Conta</h2>
+                <div class="opçao-form">
+                    <a href="#" class="btn-tab ativo">Acessar</a>
+                    <a href="#" class="btn-tab">Cadastrar</a>
+                </div>
+                <form action="telainicial.html" method="POST">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" name="remember"> Lembrar de mim
+                        </label>
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="btn-main">Entrar</button>
+
+                    <p>Não tens conta? <a href="#">Cadastre-se</a></p>
+
+                    <hr>
+                    <p>ou entrar com</p>
+
+                    <div class="imagem-google">
+                        <a href="https://accounts.google.com" target="_blank" aria-label="Entrar com conta do Google">
+                            <img src="imagem/google.png" alt="Entrar com Google" class="google">
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

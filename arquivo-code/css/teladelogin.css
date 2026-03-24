@@ -1,0 +1,308 @@
+/* Reset básico para limpar estilos do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Gradiente Radial Suave: Foco de luz no centro (#358f58) indo para escuro (#051b0d) */
+    background: radial-gradient(circle at center, #358f58 0%, #051b0d 100%);
+    background-color: #051b0d; /* Cor de fallback */
+    padding: 20px;
+}
+.container{
+    width: 100%;
+    max-width: 1100px;
+    min-height: 600px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+    border-radius: 50px;
+    background-color: #ffffff;
+    overflow: hidden; /* Garante que nada saia das bordas arredondadas */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Sombra mais sofisticada */
+}
+
+.formulario {
+    width: 100%;
+    flex: 1; /* Ocupa o espaço restante */
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem; /* Corrigido: definido tamanho da fonte */
+}
+
+/* Espaçamento entre os campos */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    height: 35px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9; /* Fundo mais claro e moderno */
+}
+
+input:focus {
+    border-color: #4a90e2;
+    background-color: #ffffff; /* Fica branco ao digitar */
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1); /* Brilho suave */
+}
+
+/* Alinhamento do checkbox e "esqueci senha" */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-options a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+/* Estilização dos Botões */
+button {
+  
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: filter 0.2s;
+    width: 100%; /* Corrigido: largura adaptável para não quebrar no celular */
+    height: 35px;
+}
+
+.btn-main {
+    background-color: #4a90e2;
+    color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px); /* Efeito moderno de "levantar" */
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-google {
+    background-color: #df4b38;
+    color: white;
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #4a90e2;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* Container do ícone */
+.imagem-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* O Link que vira o círculo branco */
+.imagem-google a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;           /* Tamanho do círculo */
+    height: 50px;          /* Tamanho do círculo */
+    background-color: #ffffff;
+    border-radius: 50%;    /* Faz ficar perfeitamente redondo */
+    text-decoration: none;
+    
+    /* Sombra suave (Clean UI) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    
+    /* Transição para os efeitos */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* A Imagem do Google dentro do círculo */
+.google {
+    width: 24px;           /* Tamanho do logo lá dentro */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.imagem-google a:hover {
+    transform: translateY(-4px); /* Sobe levemente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra aumenta */
+    background-color: #fafafa;
+}
+
+/* Efeito ao clicar (Active) */
+.imagem-google a:active {
+    transform: scale(0.9); /* Encolhe um pouco ao clicar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.informacao {
+    /* Imagem de fundo com camada escura para o texto aparecer */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imagem/imagemform.png);
+    
+    /* Faz a imagem preencher o espaço sem esticar */
+    background-size: cover;      
+    
+    /* Garante que o CENTRO da foto sempre apareça */
+    background-position: center; 
+    
+    /* Centraliza o CONTEÚDO (texto/logo) dentro da section */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    text-align: center;      /* Garante que o texto fique no meio */
+
+    color: white;
+    min-height: 300px;
+    flex: 1;         /* Cresce igualmente com o formulário */
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+.info-content {
+    z-index: 2;
+    max-width: 80%;
+}
+
+.geoagrologin{
+    font-size: 2.5rem;       /* Maior impacto visual */
+    font-weight: 700;        /* Extra negrito */
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Letras maiúsculas transmitem autoridade */
+    letter-spacing: 2px;     /* Espaçamento elegante entre letras */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.4); /* Sombra mais suave e difusa */
+}
+
+.descricao {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+/* Responsividade para Celulares e Tablets */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+    }
+    
+    .informacao {
+        min-height: 250px;
+    }
+    
+    .formulario {
+        padding: 20px;
+    }
+}
+
+/* --- Estilo das Abas de Login/Cadastro --- */
+.opçao-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    background-color: #f0f2f5; /* Fundo cinza suave */
+    border-radius: 30px;       /* Pílula arredondada */
+    padding: 5px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Sombra interna sutil */
+}
+
+.btn-tab {
+    flex: 1; /* Faz os dois botões terem o mesmo tamanho */
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estado Ativo (O botão selecionado) */
+.btn-tab.ativo {
+    background-color: #ffffff;
+    color: #2e8b57; /* Verde da marca GeoAgro */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Elevação suave */
+}
+
+/* Estado Hover (Passar o mouse no inativo) */
+.btn-tab:hover:not(.ativo) {
+    color: #2e8b57;
+    background-color: rgba(46, 139, 87, 0.05);
+}

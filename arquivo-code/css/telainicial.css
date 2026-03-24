@@ -1,19 +1,87 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #125533;
+    height: 100vh;
+    overflow: hidden; /* Evita barras de rolagem */
+    /* Mesmo gradiente da tela de login para identidade visual */
+    background: radial-gradient(circle at center, #358f58 0%, #051b0d 100%);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
 }
+
+.hero {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Animação de entrada suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.conteudo-principal {
+    animation: fadeIn 1.5s ease-out; /* Executa a animação */
+}
+
 .geoagroinicial {
-    font-size: 48px;
-    color: white;
+    font-size: 5rem; /* Bem grande */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
     margin-bottom: 10px;
-    margin-left: 30px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.slogan {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 50px;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+}
+
+/* Botão Sofisticado */
+.btn-iniciar {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: white;
+    color: #0a2e18; /* Verde escuro para contraste */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-iniciar:hover {
+    transform: scale(1.05); /* Aumenta levemente */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    background-color: #f0f0f0;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .geoagroinicial {
+        font-size: 3rem;
+    }
+    
+    .slogan {
+        font-size: 1.1rem;
+    }
+
+    .btn-iniciar {
+        width: 100%;
+        max-width: 300px;
+    }
 }
