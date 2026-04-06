@@ -1,0 +1,191 @@
+:root {
+    --primary-green: #358f58;
+    --dark-green: #051b0d;
+    --vibrant-green: #4ade80;
+    --white: #ffffff;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f2f5;
+}
+
+/* Sidebar */
+.menu {
+    width: 280px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    z-index: 10;
+}
+
+.perfil {
+    text-align: center;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.foto-perfil {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--vibrant-green);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.perfil h3 { font-size: 1rem; color: white; margin-bottom: 5px; }
+.perfil p { font-size: 0.8rem; color: var(--vibrant-green); font-weight: 600; text-transform: uppercase; }
+
+.navegacao ul { list-style: none; margin-top: 20px; }
+.navegacao li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navegacao li.active a {
+    background: rgba(255,255,255,0.05);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+/* Painel Principal */
+.principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('imagem/imagemdocampo.png') center/cover no-repeat;
+}
+
+/* Header */
+.cabe-transp {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.busca-transp {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 350px;
+    color: white;
+}
+
+.busca-transp input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+.busca-transp input::placeholder { color: rgba(255,255,255,0.7); }
+
+.user-actions button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Conteúdo */
+.conteudo {
+    padding: 30px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.layout-mapa {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 25px;
+    height: 100%;
+}
+
+.mapa-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    color: white;
+}
+
+.mapa-placeholder { text-align: center; opacity: 0.6; }
+.mapa-placeholder i { font-size: 4rem; margin-bottom: 15px; }
+
+/* Cards de Ação */
+.card-solicitacao, .lista-disponiveis {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.input-rota {
+    background: rgba(255,255,255,0.1);
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.input-rota input { background: none; border: none; color: white; outline: none; flex: 1; }
+
+.btn-solicitar {
+    width: 100%;
+    padding: 15px;
+    background: var(--vibrant-green);
+    border: none;
+    border-radius: 12px;
+    color: var(--dark-green);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item-transportador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.avatar { width: 35px; height: 35px; background: var(--primary-green); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.status-online { width: 8px; height: 8px; background: var(--vibrant-green); border-radius: 50%; position: absolute; right: 15px; box-shadow: 0 0 10px var(--vibrant-green); }

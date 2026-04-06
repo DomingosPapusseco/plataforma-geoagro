@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/telainicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="description"
         content="GeoAgro: A revolução no monitoramento agrícola. Tecnologia de precisão para maximizar sua colheita.">
     <title>GeoAgro - Agricultura de Precisão</title>
@@ -13,15 +14,33 @@
 <body>
     <section class="hero">
         <div class="conteudo-principal">
-            <h1 class="geoagroinicial">GeoAgro</h1>
-            <p class="slogan">Monitoramento Inteligente para o Campo do Futuro</p>
-
-            <a href="teladelogin.html" class="btn-iniciar">Acessar Plataforma</a>
+            <div class="logo-wrapper">
+                
+                <h1 class="geoagroinicial">GeoAgro</h1>
+            </div>
+            <p class="slogan">Tecnologia que transforma o campo.</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
         </div>
-
-
     </section>
 
+    <script>
+        // Função para redirecionar automaticamente após a animação
+        window.addEventListener('load', () => {
+            // Aguarda 3 segundos exibindo a tela inicial
+            setTimeout(() => {
+                const conteudo = document.querySelector('.conteudo-principal');
+                
+                // Adiciona a classe de fade-out (animação de saída)
+                conteudo.classList.add('fade-out');
+                
+                // Após a animação de saída terminar (1s), redireciona para o login
+                setTimeout(() => {
+                    window.location.href = "teladelogin.html";
+                }, 1000);
+            }, 3000); 
+        });
+    </script>
 </body>
-
 </html>

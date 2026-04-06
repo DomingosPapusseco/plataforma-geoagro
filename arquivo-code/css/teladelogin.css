@@ -44,6 +44,10 @@ body {
     width: 100%;
     max-width: 400px;
 }
+.cadastro {
+    width: 100%;
+    max-width: 400px;
+}
 
 h2 {
     text-align: center;
@@ -65,7 +69,8 @@ label {
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
     width: 100%;
     height: 35px;
     padding: 12px;
@@ -305,4 +310,47 @@ p a {
 .btn-tab:hover:not(.ativo) {
     color: #2e8b57;
     background-color: rgba(46, 139, 87, 0.05);
+}
+
+/* --- Seleção de Tipo de Usuário --- */
+.selection-step {
+    text-align: center;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.selection-step h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.user-types {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.type-option {
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.type-option:hover {
+    border-color: #2e8b57;
+    background-color: #f0fff4;
+    color: #2e8b57;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Classe para esconder elementos via JS */
+.hidden {
+    display: none !important;
 }

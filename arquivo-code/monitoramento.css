@@ -1,0 +1,338 @@
+:root {
+    --primary-green: #358f58;
+    --dark-green: #051b0d;
+    --vibrant-green: #4ade80;
+    --bg-light: #f0f2f5;
+    --white: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #667781;
+    --border-color: #e9edef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+/* Menu Lateral - Consistência com Mensagens */
+.menu {
+    width: 280px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    z-index: 10;
+}
+
+.perfil {
+    text-align: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.foto-perfil {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.navegacao ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.navegacao li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navegacao li.active a {
+    background-color: rgba(255,255,255,0.05);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+/* Painel Principal com Imagem de Fundo */
+.principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Imagem de fundo com overlay escuro para contraste */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('imagem/imagemdocampo.png'); /* Ajuste para o caminho da imagem do campo */
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+}
+
+/* Header do Monitoramento */
+.cabemoni {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cabeserch {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    width: 300px;
+}
+
+.cabeserch input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.cabeserch input::placeholder { color: rgba(255,255,255,0.7); }
+
+.cabemenu button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Seção de Conteúdo */
+.conteudo {
+    padding: 20px 40px; /* Reduzido para subir o conteúdo */
+}
+
+.titulo-secao {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+.titulo-secao h2 { font-size: 1.8rem; margin-bottom: 5px; }
+.titulo-secao p { opacity: 0.8; }
+
+/* Estilização dos Botões de Campo */
+.abas-campos {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.btn-campo {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-campo:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-campo.active {
+    background: var(--vibrant-green);
+    color: var(--dark-green);
+    border-color: var(--vibrant-green);
+}
+
+/* Grid de Cards de Monitoramento */
+.monitoramento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Cards menores */
+    gap: 15px;
+}
+
+/* Estilo Glassmorphism para os Cards */
+.card-monitor {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 20px 15px; /* Padding reduzido */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card-monitor:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-monitor.active {
+    background: rgba(74, 222, 128, 0.2);
+    border-color: var(--vibrant-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-monitor i {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: white !important; /* Garantindo ícones brancos */
+}
+
+.card-monitor h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.card-monitor p {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Seção de Estatísticas Detalhadas */
+.estatitica-monitoramento {
+    margin-top: 30px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.grid-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card-detalhe {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+}
+
+.header-detalhe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-detalhe h3 {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tag-campo {
+    background: var(--vibrant-green);
+    color: var(--dark-green);
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.metricas-grid {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.metrica { text-align: center; }
+.metrica span { display: block; font-size: 0.7rem; opacity: 0.7; margin-bottom: 2px; text-transform: uppercase; }
+.metrica strong { font-size: 1.1rem; color: var(--vibrant-green); }
+
+/* Visualização NPK */
+.npk-bars {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.npk-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.bar-container {
+    width: 12px;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: var(--vibrant-green);
+    box-shadow: 0 0 10px var(--vibrant-green);
+    border-radius: 6px;
+    transition: height 1s ease-in-out;
+}
+
+.npk-item span { font-size: 0.75rem; font-weight: 600; }
+
+/* Gráfico SVG e Indicador Live */
+.grafico-svg { margin-bottom: 15px; }
+.grafico-svg svg { width: 100%; height: 60px; filter: drop-shadow(0 0 5px var(--vibrant-green)); }
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--vibrant-green);
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: var(--vibrant-green);
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/telademensagem.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Mensagens - GeoAgro</title>
+</head>
+<body>
+   <section class="mensagem">
+        <aside class="menu">
+            <div class="perfil">
+                <img src="imagem/perfil.png" alt="Foto de Perfil" class="foto-perfil">
+                <h3 class="nome--agricultor">Domingos Papusseco</h3>
+                <p>Produtor Rural</p>
+            </div>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="trasportador.html"><i class="fas fa-truck"></i> Transportadores</a></li>
+                    <li><a href="monitoramento.html"><i class="fas fa-seedling"></i> Monitoramento</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-comment-dots"></i> Mensagens</a></li>
+                    <li><a href="marketplace.html"><i class="fas fa-shopping-cart"></i> Marketplace</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Definições</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="conteudo">
+        <div class="conversa-chat">
+            <header class="chat-header">
+                <div class="info-contato">
+                    <img src="imagem/perfil.png" alt="">
+                    <h4>Suporte GeoAgro</h4>
+                </div>
+                <div class="opcoes-chat">
+                    <button><i class="fas fa-phone"></i></button>
+                    <button><i class="fas fa-video"></i></button>
+                    <button><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </header>
+
+            <div class="conversa">
+                <div class="mensagem-recebida">
+                    <p>Olá, como posso ajudar você hoje?</p>
+                    <span>10:30</span>
+                </div>
+                <div class="mensagem-enviada">
+                    <p>Oi! Gostaria de saber mais sobre os recursos do GeoAgro.</p>
+                    <span>10:32</span>
+                </div>
+            </div>
+
+            <div class="bloco-mensagem">
+                <button class="btn-attach"><i class="fas fa-plus"></i></button>
+                <input type="text" placeholder="Escreva sua mensagem aqui...">
+                <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <div class="chat">
+                 <div class="pesquisar-chat">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Pesquisar conversa...">
+                </div> <hr> 
+                <div class="lista-chat">
+                    <div class="contato-chat ativo">
+                        <img src="imagem/perfil.png" alt="">
+                        <div class="info-contato">
+                            <h4>Suporte GeoAgro</h4>
+                            <p>Olá, como posso ajudar você hoje?</p>
+                        </div>
+                        <span class="hora">10:30</span>
+                    </div>
+                    <div class="contato-chat">
+                        <img src="imagem/perfil.png" alt="">
+                        <div class="info-contato">
+                            <h4>Transportadora XYZ</h4>
+                            <p>Seu pedido está a caminho!</p>
+                        </div>
+                        <span class="hora">09:15</span>
+                    </div>
+                    <div class="contato-chat">
+                        <img src="imagem/perfil.png" alt="">
+                        <div class="info-contato">
+                            <h4>AgroTech Suporte</h4>
+                            <p>Atualização de software disponível.</p>
+                        </div>
+                        <span class="hora">08:45</span>
+                    </div>
+                </div>
+        </div>
+        </main>
+   </section> 
+</body>
+</html>

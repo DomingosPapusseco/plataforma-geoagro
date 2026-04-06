@@ -1,0 +1,370 @@
+/* Variáveis para consistência de design */
+:root {
+    --primary-green: #358f58;
+    --dark-green: #051b0d;
+    --vibrant-green: #4ade80;
+    --bg-light: #f0f2f5;
+    --white: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #667781;
+    --border-color: #e9edef;
+    --shadow-soft: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+.mensagem {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+/* Menu Lateral (Aside) */
+.menu {
+    width: 280px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    z-index: 10;
+}
+
+.perfil {
+    text-align: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.foto-perfil {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    margin-bottom: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.perfil p {
+    font-size: 0.8rem;
+    color: var(--vibrant-green);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navegacao {
+    flex: 1;
+    margin-top: 20px;
+}
+
+.navegacao ul {
+    list-style: none;
+}
+
+.navegacao li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.navegacao li.active a, .navegacao li a:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--white);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+.navegacao li i {
+    width: 20px;
+    font-size: 1.1rem;
+}
+
+/* Área de Conteúdo (Main Chat) */
+.conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    background-blend-mode: overlay;
+    background-color: rgba(240, 242, 245, 0.98);
+    background-size: cover;
+}
+
+.conversa-chat {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    height: 100%;
+    position: relative;
+}
+
+/* Coluna de Histórico (Direita) */
+.chat {
+    flex: 1;
+    max-width: 400px;
+    background: var(--dark-green); /* Mesma cor do aside */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chat .pesquisar-chat {
+    margin: 15px 20px;
+    background: rgba(255, 255, 255, 0.08); /* Fundo sutil para o input no dark mode */
+    border-radius: 8px;
+    padding: 8px 15px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.lista-chat {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+.contato-chat {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contato-chat:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.contato-chat.ativo {
+    background-color: rgba(74, 222, 128, 0.08); /* Um toque de verde para o contato ativo */
+    border-right: 3px solid var(--vibrant-green);
+}
+
+.contato-chat img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contato-chat .info-contato h4 {
+    font-size: 0.85rem;
+    color: var(--white);
+    margin-bottom: 1px;
+    font-weight: 600;
+}
+
+.contato-chat .info-contato p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contato-chat .hora {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+}
+
+.chat-header {
+    padding: 12px 25px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 5;
+}
+
+.info-contato {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-contato h4 {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.info-contato img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.pesquisar-chat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+}
+
+.opcoes-chat {
+    display: flex;
+    gap: 15px;
+}
+
+.opcoes-chat button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.opcoes-chat button:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.pesquisar-chat input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--white);
+}
+
+.chat .pesquisar-chat input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Balões de Mensagem */
+.conversa {
+    flex: 1;
+    padding: 25px 40px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.mensagem-recebida, .mensagem-enviada {
+    max-width: 65%;
+    padding: 10px 16px;
+    border-radius: 12px;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    box-shadow: var(--shadow-soft);
+}
+
+.mensagem-recebida {
+    align-self: flex-start;
+    background: var(--white);
+    color: var(--text-main);
+    border-top-left-radius: 2px;
+}
+
+.mensagem-enviada {
+    align-self: flex-end;
+    background: var(--primary-green);
+    color: var(--white);
+    border-top-right-radius: 2px;
+}
+
+.conversa span {
+    display: block;
+    font-size: 0.65rem;
+    margin-top: 4px;
+    opacity: 0.7;
+    text-align: right;
+}
+
+/* Input de Mensagem */
+.bloco-mensagem {
+    padding: 15px 30px 25px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.bloco-mensagem input {
+    flex: 1;
+    padding: 14px 22px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    outline: none;
+    background: #f9f9f9;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.bloco-mensagem input:focus {
+    background: var(--white);
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(53, 143, 88, 0.1);
+}
+
+.btn-send {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.btn-attach {
+    background: transparent;
+    color: var(--text-muted);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-attach:hover {
+    background: var(--bg-light);
+    color: var(--primary-green);
+}
+
+.btn-send:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(5, 27, 13, 0.3);
+}
+
+@media (max-width: 768px) {
+    .menu { width: 70px; }
+    .perfil h3, .perfil p, .navegacao span, .navegacao li a { display: none; }
+    .navegacao li a { justify-content: center; padding: 20px 0; }
+    .navegacao li i { display: block; font-size: 1.5rem; }
+}
