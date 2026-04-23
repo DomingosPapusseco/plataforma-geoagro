@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="description"
         content="Acesse o GeoAgro, sua plataforma completa de monitoramento agrícola e agricultura de precisão. Gerencie suas colheitas com tecnologia.">
     <title>GeoAgro | Home</title>
@@ -15,57 +16,42 @@
         <div class="logo">
             <h1>GeoAgro</h1>
         </div>
-
-        <div class="header-list">
-            <ul>
-                <li><a href=""><img src="imagem/casa.png" alt=""></a></li>
-                <li><a href=""><img src="imagem/alert1.png" alt="Alerta"></a></li>
-                <li><a href=""><img src="imagem/notification.png" alt="Notificações"></a></li>
-                <li><a href=""><img src="imagem/perfil.png" alt="img perfil"></a></li>
-                <li><a href=""><img src="imagem/config.png" alt="Configurações"></a></li>
-            </ul>
+        <div class="header-icons">
+            <button class="icon-btn"><i class="fas fa-home icon-btn"></i></button>
+            <button class="icon-btn"><i class="fas fa-bell icon-btn"></i><span></span></button> 
+            <button class="icon-btn"><i class="fas fa-user icon-btn"></i></button>
+            <button class="icon-btn"><i class="fas fa-cog icon-btn"></i></button>
         </div>
     </header>
 
-    <main>
-        <div class="main-list">
-            <div class="main-perfil">
-                <img src="imagem/perfil.png" alt="">
-                <h3>Rodrigo Muandumba</h3>
-            </div>
-            <hr>
-            <div class="main-items">
-                <ul>
-                    <li><img src="imagem/monitoramento.png" alt="">
-                        <p>Monitorar</p>
-                    </li>
-                    <li><img src="imagem/sms.png" alt="">
-                        <p>Mensagens</p>
-                    </li>
-                    <li><img src="imagem/adicionar.png" alt="">
-                        <p>Cadastrar campo</p>
-                    </li>
-                    <li><img src="imagem/transporte.png" alt="">
-                        <p>Solicitar Transporte</p>
-                    </li>
-                    <li><img src="imagem/compra.png" alt="">
-                        <p>Marketplace</p>
-                    </li>
-                    <li><img src="imagem/config.png" alt="">
-                        <p>Definições</p>
-                    </li>
-                </ul>
-            </div>
+    <aside class="menu">
+        <div class="perfil">
+            <img src="imagem/perfil.png" alt="Foto de Perfil" class="foto-perfil">
+            <h3>Rodrigo Muandumba</h3>
         </div>
+        <nav class="navegacao">
+            <ul>
+                <li class="active"><a href="home.html"><i class="fas fa-home"></i>Início</a></li>
+                <li><a href="trasportador.html"><i class="fas fa-truck"></i> Transportadores</a></li>
+                <li><a href="monitoramento.html"><i class="fas fa-seedling"></i> Monitoramento</a></li>
+                <li><a href="telademensagem.html"><i class="fas fa-comment-dots"></i> Mensagens</a></li>
+                <li><a href="marketplace.html"><i class="fas fa-shopping-cart"></i> Marketplace</a></li>
+                <li><a href="definicoes.html"><i class="fas fa-cog"></i> Definições</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <div class="conteudo">
+    <main class="principal">
+        <section class="feed-produtos">
+            <div class="header-market">
+            </div>
+
             <div class="resumo-main">
                 <div class="tema">
                     <h2>Resumo do Campo</h2>
                 </div>
 
-                <div class="resumo-conteudo">
-
+                <div class="grid-conteudos">
                     <div class="card-resumo">
                         <div class="img-resumo"><img src="imagem/ph-do-solo.png" alt=""></div>
                         <div class="texto-resumo">Saúde da planta: 90% <br>PH do Solo: 70%</div>
@@ -80,7 +66,6 @@
                         <div class="img-resumo"><img src="imagem/colheita.png" alt=""></div>
                         <div class="texto-resumo">Saúde da planta: 90% <br>PH do Solo: 70%</div>
                     </div>
-
                 </div>
             </div>
 
@@ -88,87 +73,53 @@
                 <div class="tema">
                     <h2>Publicações</h2>
                 </div>
-                <div class="card-pub">
-                    <div class="img-pub"><img src="imagem/images1.png" alt=""></div>
-                    <div class="card-pub-conteudo">
-                        <div class="descricao-pub">
-                            <h2>Nome do individuo</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni commodi, dicta culpa harum
-                                amet, repellat dolores, perferendis vel tempora cumque aut iste id reprehenderierat
-                                impedit odit quibusdam nihil. Veoloremque odio soluta cumque quisquam, eius eveniet
-                                quaerat impedit odit quibusdam nihil. Velit!is neque qui nam doloremqerat impedit odit
-                                quibusdam nihil. Veoloremque odio soluta cumt quae praesentium. Tenetur, illo! Suscipit,
-                                doloribus?</p>
+                <div class="grid-conteudos">
+                    <div class="card-pub">
+                        <div class="img-pub"><img src="imagem/images1.png" alt=""></div>
+                        <div class="card-pub-conteudo">
+                            <div class="descricao-pub">
+                                <h2>Nome do individuo</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni commodi, dicta culpa
+                                    harum
+                                    amet, repellat dolores, perferendis vel tempora cumque aut iste id reprehenderierat
+                                    impedit odit quibusdam nihil. Veoloremque odio soluta cumque quisquam, eius eveniet
+                                    quaerat impedit odit quibusdam nihil. Velit!is neque qui nam doloremqerat impedit
+                                    odit
+                                    quibusdam nihil. Veoloremque odio soluta cumt quae praesentium. Tenetur, illo!
+                                    Suscipit,
+                                    doloribus?</p>
+                            </div>
+                            <div class="reaction-pub">
+                                <i class="far fa-heart"></i> 33
+                                <i class="far fa-comment"></i> Conversar
+                            </div>
                         </div>
-                        <div class="reaction-pub">
-                            <img src="imagem/adoro.png" alt="">33
-                            <img src="imagem/balao-de-bate-papo.png" alt="">Conversar
+                    </div>
+
+                    <div class="card-pub">
+                        <div class="img-pub"><img src="imagem/images2.png" alt=""></div>
+                        <div class="card-pub-conteudo">
+                            <div class="descricao-pub">
+                                <h2>Nome do individuo</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, dolor! Cupiditate
+                                    neque
+                                    qui nam doloremque odio soluta cumque quisquam, eius eveniet quaerat impedit odit
+                                    impedit
+                                    odit quibusdam nihil. Velit!is neque qui nam doloremque odio soluta cumque quisquam,
+                                    eius eveniet quaerat impedit odit quibusdam nihil. Velit!</p>
+                            </div>
+                            <div class="reaction-pub">
+                                <i class="far fa-heart"></i> 33
+                                <a href=""><i class="far fa-comment"></i>Conversar</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-                <div class="card-pub">
-                    <div class="img-pub"><img src="imagem/images2.png" alt=""></div>
-
-                    <div class="card-pub-conteudo">
-
-                        <div class="descricao-pub">
-                            <h2>Nome do individuo</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, dolor! Cupiditate neque
-                                qui nam doloremque odio soluta cumque quisquam, eius eveniet quaerat impedit odit
-                                quibusdam nihil. Veoloremque odio soluta cumque quisquam, eius eveniet quaerat impedit
-                                odit quibusdam nihil. Velit!is neque qui nam doloremque odio soluta cumque quisquam,
-                                eius eveniet quaerat impedit odit quibusdam nihil. Velit!</p>
-                        </div>
-                        <div class="reaction-pub">
-                            <img src="imagem/adoro.png" alt="">33
-                            <img src="imagem/balao-de-bate-papo.png" alt="">Conversar
-                        </div>
-                    </div>
-                </div>
-
             </div>
+        </section>
     </main>
-
     <footer>
-        <div class="items-footer">
-
-            <div class="card-footer">
-                <h2>GeoAgro</h2>
-                <p>Uma plataforma 100% angolana que ajuda no monitoramento de terras, clima, e muito mais sobre a
-                    agricultura</p>
-
-                <div class="links-footer">
-                    <a href="https:www.facebook.com" target="_blank"><img src="imagem/fb.png" alt=""></a>
-                    <a href="https:www.whatsapp.com" target="_blank"><img src="imagem/whatsapp.png" alt=""></a>
-                    <a href="https:www.instagram.com" target="_blank"><img src="imagem/instagram.png" alt=""></a>
-                    <a href="https:www.twiter.com" target="_blank"><img src="imagem/twiter.png" alt=""></a>
-                </div>
-            </div>
-
-            <div class="linha-vertical"></div>
-
-            <div class="card-footer">
-                <h3>Informações Legais</h3>
-                <a href="#">Política de Privacidade</a><br>
-                <a href="#">Termos de Uso</a><br>
-                <a href="#">Contato</a>
-            </div>
-
-            <div class="linha-vertical"></div>
-
-            <div class="card-footer">
-                <h3>Links Secundarios</h3>
-                <a href="">FAQ</a><br>
-                <a href="">Suporte Técnico</a><br>
-                <a href="">Blog GeoAgro</a><br>
-                <a href="">Contacto@GeoAgro</a>
-            </div>
-        </div>
-
-
-        <p>&copy; 2026 GeoAgro. Todos os direitos reservados.</p>
+        
     </footer>
 </body>
 

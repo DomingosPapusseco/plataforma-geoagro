@@ -1,0 +1,187 @@
+:root {
+    --primary-green: #358f58;
+    --dark-green: #051b0d;
+    --vibrant-green: #4ade80;
+    --bg-light: #f0f2f5;
+    --white: #ffffff;
+    --text-main: #1a1a1a;
+    --text-muted: #667781;
+    --border-color: #e9edef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+/* Menu Lateral - Consistência com Mensagens */
+.menu {
+    width: 280px;
+    background-color: var(--dark-green);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    z-index: 10;
+}
+
+.perfil {
+    text-align: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.foto-perfil {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.navegacao ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.navegacao li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navegacao li.active a {
+    background-color: rgba(255,255,255,0.05);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+/* Painel Principal com Imagem de Fundo */
+.principal {
+    flex: 1;
+    /* Imagem de fundo com overlay escuro para contraste */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('imagem/imagemdocampo.png'); /* Ajuste para o caminho da imagem do campo */
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+}
+
+/* Header do Monitoramento */
+.cabemoni {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cabeserch {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    width: 300px;
+}
+
+.cabeserch input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+}
+
+.cabeserch input::placeholder { color: rgba(255,255,255,0.7); }
+
+.cabemenu button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.section{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.card-list{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* O Card */
+.card {
+    margin: 10px;
+    position: relative;
+    width: 30.3%;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1); /* Transparência */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Efeito de vidro */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card-img{
+    display: flex;
+    justify-content: center;  /* Alinha horizontalmente */
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-img img{
+    justify-content: center;
+
+}
+
+.card-tema{
+    width: 100%;
+    border-top:1px solid rgba(255, 255, 255, 0.2) ;
+    height: 20%;
+    justify-content: center;  /* Alinha horizontalmente */
+    align-items: center;
+    display: flex;
+    color: white;
+}
+
+.card-icone{
+    color: white;
+}
