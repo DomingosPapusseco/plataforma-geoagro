@@ -49,24 +49,11 @@
     border: 3px solid var(--primary-green);
     margin-bottom: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.perfil p {
-    font-size: 0.8rem;
-    color: var(--vibrant-green);
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.navegacao {
-    flex: 1;
-    margin-top: 20px;
 }
 
 .navegacao ul {
     list-style: none;
+    margin-top: 20px;
 }
 
 .navegacao li a {
@@ -76,19 +63,12 @@
     padding: 15px 25px;
     color: var(--white);
     text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    transition: 0.3s;
 }
 
-.navegacao li.active a, .navegacao li a:hover {
+.navegacao li.active a {
     background-color: rgba(255,255,255,0.05);
-    color: var(--white);
     border-left: 4px solid var(--vibrant-green);
-}
-
-.navegacao li i {
-    width: 20px;
-    font-size: 1.1rem;
 }
 
 /* Área de Conteúdo (Main Chat) */

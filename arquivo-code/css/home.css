@@ -138,10 +138,12 @@ body {
     transition: 0.3s;
 }
 
-.navegacao li.active a {
-    background: rgba(255, 255, 255, 0.05);
+.navegacao li.active a, .navegacao li a:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--white);
     border-left: 4px solid var(--vibrant-green);
 }
+
 
 .principal {
     flex: 1;

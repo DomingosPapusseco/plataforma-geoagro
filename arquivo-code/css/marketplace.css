@@ -28,18 +28,53 @@ body {
 .menu {
     width: 280px;
     background-color: var(--dark-green);
-    padding: 40px 0;
+    color: var(--white);
     display: flex;
     flex-direction: column;
+    padding: 40px 0;
+    z-index: 10;
 }
 
-.perfil { text-align: center; padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.perfil h3 { color: var(--white); font-size: 1rem; margin-bottom: 5px; }
-.perfil p { color: var(--vibrant-green); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
-.foto-perfil { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--vibrant-green); margin-bottom: 10px; }
-.navegacao ul { list-style: none; margin-top: 20px; }
-.navegacao li a { display: flex; align-items: center; gap: 15px; padding: 15px 25px; color: white; text-decoration: none; transition: 0.3s; }
-.navegacao li.active a { background: rgba(255,255,255,0.05); border-left: 4px solid var(--vibrant-green); }
+.perfil {
+    text-align: center;
+    padding: 0 20px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.foto-perfil {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-green);
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.navegacao ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.navegacao li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navegacao li.active a {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+.navegacao li.active a, .navegacao li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    border-left: 4px solid var(--vibrant-green);
+}
 
 /* Layout Principal (Main + Sidebar Direita) */
 .principal {
