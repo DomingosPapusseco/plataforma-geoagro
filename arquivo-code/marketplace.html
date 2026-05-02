@@ -15,13 +15,7 @@
                 </div>
                 <h2>Geo<span>Agro</span></h2>
             </div>
-                  <div class="header-market">
-                    <div class="pesquisa-market">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="pesquisar...">
-                    </div>
 
-                </div>
             
             <nav class="navegacao">
                 
@@ -37,48 +31,151 @@
         </aside>
 
         <main class="principal">
-<section class="feed-produtos">
-    <!-- Header -->
-    <div class="header-market">
-        <div class="pesquisa-market">
-            <i class="fas fa-search"></i>
-            <input type="text" id="inputPesquisa" placeholder="O que você precisa para o seu campo?">
-        </div>
-        <button class="btn-carrinho">
-            <i class="fas fa-shopping-basket"></i>
-            <span class="badge" id="cartBadge">0</span>
-        </button>
-    </div>
+            <section class="feed-produtos">
+                
+                <div class="header-market">
+                    <div class="pesquisa-market">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="O que você precisa para o seu campo?">
+                   </div>
+                   <div class="cabemenu">
+                     <button><i class="fas fa-bell"></i></button>
+                     <button><i class="fas fa-user"></i></button>
+                   </div>
 
-    <!-- Botão para disparar o Modal de Criação -->
-    <div class="acoes-agricultor" style="margin: 20px 0; display: flex; justify-content: flex-end;">
-        <button onclick="abrirModal()" class="btn-postar" style="background: #2ecc71; color: white; border: none; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);">
-            <i class="fas fa-plus-circle"></i> Novo Produto
-        </button>
-    </div>
+                </div> <br>
 
-    <!-- Grid onde os produtos aparecerão via JS -->
-    <div class="grid-produtos" id="gridProdutos">
-        <!-- Os cards de produtos serão injetados aqui pelo JavaScript -->
-    </div>
-</section>
+                <div class="banner-promocao">
+                    <div class="info-promo">
+                        <h2>Fertilizantes Orgânicos</h2>
+                        <p>Até 30% de desconto para agricultura familiar.</p>
+                        <button>Ver Ofertas</button>
+                    </div>
+                </div> <br>
+                       <div class="portfolio-post">
+                             <div> <h1>Portfolio de colheita <span><a href="">ver mais</a></span></h1></div>
+                             <div><button class="btn-criar">criar post</button></div>
+                        
+                       </div> <br> <br>
+                <div class="lista_esposicao">
+                                           
 
-<!-- Modal para Criar Postagem (Escondido por padrão) -->
-<div id="modalPost" class="modal-overlay" style="display:none; position: fixed; top:0; left:0; width: 100%; height:100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items:center; justify-content:center;">
-    <div class="modal-content" style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px;">
-        <h3>Anunciar Novo Produto</h3>
-        <form id="formProduto">
-            <input type="text" id="nomeProd" placeholder="Nome do Produto (Ex: Mandioca)" required style="width: 100%; margin: 10px 0; padding: 10px;">
-            <input type="number" id="precoProd" placeholder="Preço (Kz)" required style="width: 100%; margin: 10px 0; padding: 10px;">
-            <textarea id="descProd" placeholder="Descrição da colheita..." style="width: 100%; margin: 10px 0; padding: 10px; height: 80px;"></textarea>
-            <input type="text" id="imgProd" placeholder="URL da Imagem (Ex: imagem/milho.png)" style="width: 100%; margin: 10px 0; padding: 10px;">
-            <div style="display: flex; gap: 10px; margin-top: 20px;">
-                <button type="button" onclick="fecharModal()" style="flex:1; padding: 10px;">Cancelar</button>
-                <button type="submit" style="flex:1; padding: 10px; background: #27ae60; color: white; border: none; border-radius: 5px;">Postar Agora</button>
-            </div>
-        </form>
-    </div>
-</div>
+                        <div class="">
+                            <figure class="card-esposi">
+                                <figcaption><strong>armazem de produtos fertu</strong></figcaption>
+                                <img src="imagem/fertilizante.png" alt="">
+                                <figcaption> 
+                                     <p class="reacoes">  <span class="solicitacao"><i class="fas fa-handshake"></i> 12 </span> <span class="comentario"> comentarios</span> <span class="preco">1000kz</span></p>
+                                     
+
+                                </figcaption>
+                            </figure>
+                            
+                        </div>
+                      <div class="">
+                            <figure class="card-esposi">
+                                <figcaption><strong>armazem de produtos fertu</strong></figcaption>
+                                <img src="imagem/fertilizante.png" alt="">
+                                <figcaption> 
+                                     <p class="reacoes">  <span class="solicitacao"><i class="fas fa-handshake"></i> 12 </span> <span class="comentario"> comentarios</span> <span class="preco">1000kz</span></p>
+                                     
+
+                                </figcaption>
+                            </figure>
+                            
+                        </div>
+                                                <div class="">
+                            <figure class="card-esposi">
+                                <figcaption><strong>armazem de produtos fertu</strong></figcaption>
+                                <img src="imagem/fertilizante.png" alt="">
+                                <figcaption> 
+                                     <p class="reacoes">  <span class="solicitacao"><i class="fas fa-handshake"></i> 12 </span> <span class="comentario"> comentarios</span> <span class="preco">1000kz</span></p>
+                                     
+
+                                </figcaption>
+                            </figure>
+                            
+                        </div>
+                                                <div class="">
+                            <figure class="card-esposi">
+                                <figcaption><strong>armazem de produtos fertu</strong></figcaption>
+                                <img src="imagem/fertilizante.png" alt="">
+                                <figcaption> 
+                                     <p class="reacoes">  <span class="solicitacao"><i class="fas fa-handshake"></i> 12 </span> <span class="comentario"> comentarios</span> <span class="preco">1000kz</span></p>
+                                     
+
+                                </figcaption>
+                            </figure>
+                            
+                        </div> 
+                        </div> <br><br>
+                        <div class="portfolio-post">
+                             <div> <h1> Gestão de lotes solicitados </h1></div>
+                            
+                        
+                       </div> <br> <br>
+                        <div class="gestao">
+
+                        </div>
+                
+
+       
+            </section>
+            <!--          <div class="grid-produtos">
+                    <div class="card-produto">
+                        <div class="card-header">
+                            <img src="imagem/milho.png" alt="Vendedor">
+                            <div class="vendedor-info">
+                                <a href="#" class="nome-vendedor">Agricultor: Cooperativa de Luanda</a>
+                                <span class="tempo-post">2 h • <i class="fas fa-globe-africa"></i></span>
+                            </div>
+                            <button class="btn-opcoes"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <p class="descricao-produto">Colheita de milho amarelo fresquinho. Disponível para carregamento imediato. Cerca de 50 sacas prontas para venda.</p>
+                            <div class="img-container">
+                                <img src="imagem/milho.png" alt="Produto do Campo" class="img-post">
+                            </div>
+                        </div>
+                        <div class="card-meticas">
+                            <span class="reacoes"><i class="fas fa-handshake"></i> 12 comerciantes solicitaram</span>
+                        </div>
+                        <div class="card-footer-fb">
+                            <div class="acoes-fb">
+                                <button class="btn-acao"><i class="fas fa-paper-plane"></i> Solicitar</button>
+                                <button><i class="far fa-comment"></i> Perguntar</button>
+                                <button class="btn-comprar-fb"><i class="fas fa-tag"></i> 15.500 Kz/Saca</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <div class="card-header">
+                            <img src="imagem/tomate.png" alt="Vendedor">
+                            <div class="vendedor-info">
+                                <a href="#" class="nome-vendedor">Agricultor: José Muanda</a>
+                                <span class="tempo-post">5 h • <i class="fas fa-globe-africa"></i></span>
+                            </div>
+                            <button class="btn-opcoes"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <p class="descricao-produto">tomate de primeira qualidade. Cultivado sem agrotóxicos. Procuro comerciante para compra de lote fechado.</p>
+                            <div class="img-container">
+                                <img src="imagem/tomate.png" alt="Produto do Campo" class="img-post">
+                            </div>
+                        </div>
+                        <div class="card-meticas">
+                            <span class="reacoes"><i class="fas fa-handshake"></i> 8 comerciantes solicitaram</span>
+                        </div>
+                        <div class="card-footer-fb">
+                            <div class="acoes-fb">
+                                <button class="btn-acao"><i class="fas fa-paper-plane"></i> Solicitar</button>
+                                <button><i class="far fa-comment"></i> Perguntar</button>
+                                <button class="btn-comprar-fb"><i class="fas fa-tag"></i> 4.200 Kz/Kg</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
 
             <aside class="sidebar-direita">
                 <div class="secao-sidebar">
@@ -109,82 +206,7 @@
                     </div>
                 </div>
             </aside>
+
         </main>
 </body>
-<script>
-    // Array que armazena os produtos (carrega do LocalStorage ou começa vazio)
-let produtos = JSON.parse(localStorage.getItem('meusProdutos')) || [];
-
-const grid = document.getElementById('gridProdutos');
-const form = document.getElementById('formProduto');
-
-// Função para renderizar os posts na tela
-function renderizarPosts() {
-    grid.innerHTML = '';
-    
-    produtos.forEach((prod, index) => {
-        grid.innerHTML += `
-            <div class="card-produto">
-                <div class="card-header">
-                    <img src="imagem/avatar_agricultor.png" style="width:40px; border-radius:50%">
-                    <div class="vendedor-info">
-                        <a href="#" class="nome-vendedor">Minha Oferta: ${prod.nome}</a>
-                        <span class="tempo-post">Agora • <i class="fas fa-globe-africa"></i></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="descricao-produto">${prod.descricao}</p>
-                    <div class="img-container">
-                        <img src="${prod.imagem || 'imagem/default.png'}" class="img-post">
-                    </div>
-                </div>
-                <div class="card-meticas">
-                    <span class="reacoes"><i class="fas fa-handshake"></i> ${prod.solicitacoes} interessados</span>
-                    <span style="margin-left: 15px;"><i class="far fa-comment"></i> ${prod.comentarios.length} perguntas</span>
-                </div>
-                <div class="card-footer-fb">
-                    <div class="acoes-fb">
-                        <button onclick="removerPost(${index})" style="color: #e74c3c;"><i class="fas fa-trash"></i> Apagar</button>
-                        <button><i class="far fa-comment"></i> Ver Perguntas</button>
-                        <button class="btn-comprar-fb"><i class="fas fa-tag"></i> ${prod.preco} Kz</button>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-}
-
-// Lógica para salvar novo produto
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const novoProd = {
-        nome: document.getElementById('nomeProd').value,
-        preco: document.getElementById('precoProd').value,
-        descricao: document.getElementById('descProd').value,
-        imagem: document.getElementById('imgProd').value,
-        solicitacoes: 0,
-        comentarios: []
-    };
-    
-    produtos.unshift(novoProd); // Adiciona no início da lista
-    localStorage.setItem('meusProdutos', JSON.stringify(produtos));
-    
-    fecharModal();
-    form.reset();
-    renderizarPosts();
-});
-
-// Funções de Interface
-function abrirModal() { document.getElementById('modalPost').style.display = 'flex'; }
-function fecharModal() { document.getElementById('modalPost').style.display = 'none'; }
-function removerPost(index) {
-    produtos.splice(index, 1);
-    localStorage.setItem('meusProdutos', JSON.stringify(produtos));
-    renderizarPosts();
-}
-
-// Inicializa a tela
-renderizarPosts();
-</script>
 </html>
