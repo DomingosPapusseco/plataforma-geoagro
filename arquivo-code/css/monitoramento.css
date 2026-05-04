@@ -8,6 +8,122 @@
     --text-muted: #667781;
     --border-color: #e9edef;
 }
+:root {
+    --primary-green: #358f58;
+    --dark-green: #051b0d;
+    --vibrant-green: #4ade80;
+    --bg-light: #f0f2f5;
+    --white: #ffffff;
+    --text-muted: #a0a0a0;
+    --fb-text: #050505;
+    --fb-gray: #65676b;
+
+    --verde-primario: #358f58;
+    --verde-vibrante: #4ade80;
+    --branco: #ffffff;
+    --cinza-borda: #ced0d4;
+    --texto-escuro: #050505;
+        --canvas-bg: #f4f6f8;
+    --card-bg: #ffffff;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --accent-green: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-blue: #3b82f6;
+    --border-ui: rgba(0, 0, 0, 0.04);
+    --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --surface-light: #121212;
+            --border: #1f1f1f;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.15);
+            --danger: #ef4444;
+            --warn: #f59e0b;
+            --info: #3b82f6;
+}
+
+  /* --- ASIDE: MENU LATERAL PROFISSIONAL --- */
+        .sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 32px 0;
+            transition: all 0.3s ease;
+        }
+
+        .brand {
+            padding: 0 32px;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            background: var(--accent-green);
+            color: var(--bg);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            box-shadow: 0 0 20px var(--accent-glow);
+            
+        }
+
+        .brand span {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: white;
+        }
+
+        .brand span em { color: var(--accent-green); font-style: normal; }
+
+        .nav-section { padding: 0 16px; margin-bottom: 32px; }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            padding-left: 16px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 12px;
+            margin-bottom: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-item i { width: 20px; font-size: 1.1rem; }
+
+        .nav-item:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-item.active {
+            color: var(--accent-green);
+            background: var(--accent-glow);
+        }
+
 
 * {
     margin: 0;
@@ -34,20 +150,82 @@ body {
     z-index: 10;
 }
 
-.perfil {
-    text-align: center;
-    padding: 0 20px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+:root {
+    --bg-dark: #0a0c10;
+    --brand-primary: #00ff88; /* Verde Neon High-Tech */
+    --brand-secondary: #ffffff;
+    --text-muted: #8b949e;
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
-.foto-perfil {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 3px solid var(--primary-green);
-    margin-bottom: 10px;
-    object-fit: cover;
+.logo-menu {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-dark);
+    padding: 8px 16px 8px 8px; /* Padding assimétrico */
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    gap: 14px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 250px;
 }
+
+.brand-box {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, #12141d, #0a0c10);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* um ponto de luz de geolocalização */
+.brand-box::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    background: var(--brand-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--brand-primary);
+}
+
+.brand-box i {
+    color: var(--brand-secondary);
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
+}
+
+.logo-menu h2 {
+    color: var(--brand-secondary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600px;
+    letter-spacing: -0.04em; /* Kerning negativo para look premium */
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo-menu h2 span {
+    color: var(--brand-primary);
+    margin-left: 2px;
+    opacity: 0.9;
+}
+
+/* Interação Minimalista */
+.logo-menu:hover {
+    border-color: rgba(0, 255, 136, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
 
 .navegacao ul {
     list-style: none;
@@ -69,14 +247,14 @@ body {
     border-left: 4px solid var(--vibrant-green);
 }
 
+
 /* Painel Principal com Imagem de Fundo */
 .principal {
     flex: 1;
     display: flex;
     flex-direction: column;
     /* Imagem de fundo com overlay escuro para contraste */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('imagem/imagemdocampo.png'); /* Ajuste para o caminho da imagem do campo */
+    background: black; /* Ajuste para o caminho da imagem do campo */
     background-size: cover;
     background-position: center;
     overflow-y: auto;
@@ -88,27 +266,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 
-.cabeserch {
-    background: rgba(255, 255, 255, 0.2);
+.cabe {
+    
     padding: 8px 15px;
-    border-radius: 20px;
-    display: flex;
+      
     align-items: center;
-    gap: 10px;
     color: white;
-    width: 300px;
+    
 }
 
-.cabeserch input {
-    background: none;
-    border: none;
-    color: white;
-    outline: none;
+
+.cabe h1{
+    font-size: medium;
 }
 
 .cabeserch input::placeholder { color: rgba(255,255,255,0.7); }

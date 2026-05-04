@@ -9,89 +9,127 @@
 </head>
 <body>
    <section class="mensagem">
-        <aside class="menu">
-            <div class="perfil">
-                <img src="imagem/perfil.png" alt="Foto de Perfil" class="foto-perfil">
-                <h3 class="nome--agricultor">Domingos Papusseco</h3>
-                <p>Produtor Rural</p>
-            </div>
-            <nav class="navegacao">
-                <ul>
-                    <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
-                    <li><a href="trasportador.html"><i class="fas fa-truck"></i> Transportadores</a></li>
-                    <li><a href="monitoramento.html"><i class="fas fa-seedling"></i> Monitoramento</a></li>
-                    <li class="active"><a href="#"><i class="fas fa-comment-dots"></i> Mensagens</a></li>
-                    <li><a href="marketplace.html"><i class="fas fa-shopping-cart"></i> Marketplace</a></li>
-                    <li><a href="definicoes.html"><i class="fas fa-cog"></i> Definições</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="conteudo">
-        <div class="conversa-chat">
-            <header class="chat-header">
-                <div class="info-contato">
-                    <img src="imagem/perfil.png" alt="">
-                    <h4>Suporte GeoAgro</h4>
-                </div>
-                <div class="opcoes-chat">
-                    <button><i class="fas fa-phone"></i></button>
-                    <button><i class="fas fa-video"></i></button>
-                    <button><i class="fas fa-ellipsis-v"></i></button>
-                </div>
-            </header>
-
-            <div class="conversa">
-                <div class="mensagem-recebida">
-                    <p>Olá, como posso ajudar você hoje?</p>
-                    <span>10:30</span>
-                </div>
-                <div class="mensagem-enviada">
-                    <p>Oi! Gostaria de saber mais sobre os recursos do GeoAgro.</p>
-                    <span>10:32</span>
-                </div>
-            </div>
-
-            <div class="bloco-mensagem">
-                <button class="btn-attach"><i class="fas fa-plus"></i></button>
-                <input type="text" placeholder="Escreva sua mensagem aqui...">
-                <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
-            </div>
+    <!-- ASIDE RECUPERADO E MELHORADO -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i class="fas fa-satellite"></i></div>
+            <span>Geo<em>Agro</em></span>
         </div>
 
-        <div class="chat">
-                 <div class="pesquisar-chat">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Pesquisar conversa...">
-                </div> <hr> 
-                <div class="lista-chat">
-                    <div class="contato-chat ativo">
-                        <img src="imagem/perfil.png" alt="">
-                        <div class="info-contato">
-                            <h4>Suporte GeoAgro</h4>
-                            <p>Olá, como posso ajudar você hoje?</p>
+        <div class="nav-section">
+            <div class="nav-label">Principal</div>
+            <a href="home.html" class="nav-item "><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+            <a href="monitoramento.html" class="nav-item"><i class="fas fa-layer-group"></i> <span>Sensores</span></a>
+            <a href="trasportador.html" class="nav-item"><i class="fas fa-truck-moving"></i> <span>Logística de Fretes</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Negócios</div>
+            <a href="marketplace.html" class="nav-item"><i class="fas fa-store"></i> <span>esposição</span></a>
+            <a href="telademensagem.html" class="nav-item active"><i class="fas fa-comments"></i> <span>Mensagens</span></a>
+        </div>
+
+        <div class="nav-section" style="margin-top: auto;">
+            <a href="definicoes.html" class="nav-item"><i class="fas fa-user-gear"></i> <span>Definições</span></a>
+            <a href="#" class="nav-item" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        </div>
+    </aside>
+     <main class="modulo-comunicacao">
+            
+            <!-- JANELA DE CONVERSA (ESQUERDA) -->
+            <section class="janela-conversa">
+                <header class="cabecalho-chat">
+                    <div class="perfil-foco">
+                        <img src="https://ui-avatars.com/api/?name=Suporte+Tecnico&background=10b981&color=fff&bold=true" alt="Suporte">
+                        <div>
+                            <h4 style="margin:0; font-size: 0.95rem;">Centro de Apoio GeoAgro</h4>
+                            <span class="status-badge">Especialista Online</span>
                         </div>
-                        <span class="hora">10:30</span>
                     </div>
-                    <div class="contato-chat">
-                        <img src="imagem/perfil.png" alt="">
-                        <div class="info-contato">
-                            <h4>Transportadora XYZ</h4>
-                            <p>Seu pedido está a caminho!</p>
-                        </div>
-                        <span class="hora">09:15</span>
+                    <div style="display: flex; gap: 20px; color: var(--texto-suave); font-size: 1rem;">
+                        <i class="fas fa-search" style="cursor:pointer;"></i>
+                        <i class="fas fa-phone-alt" style="cursor:pointer;"></i>
+                        <i class="fas fa-ellipsis-h" style="cursor:pointer;"></i>
                     </div>
-                    <div class="contato-chat">
-                        <img src="imagem/perfil.png" alt="">
-                        <div class="info-contato">
-                            <h4>AgroTech Suporte</h4>
-                            <p>Atualização de software disponível.</p>
-                        </div>
-                        <span class="hora">08:45</span>
+                </header>
+
+                <div class="area-mensagens">
+                    <div class="bolha bolha-recebida">
+                        Olá! O nosso sistema detetou uma descida rápida na humidade do seu Talhão Norte. 
+                        <span class="bolha-hora">10:30 • Lida</span>
+                    </div>
+                    <div class="bolha bolha-enviada">
+                        Bom dia. Sim, reparei agora no painel. O vento está muito forte para ligar os pivots agora?
+                        <span class="bolha-hora">10:32</span>
+                    </div>
+                    <div class="bolha bolha-recebida">
+                        Exatamente. A nossa recomendação é aguardar até às 18:00. O vento irá baixar para 8km/h, garantindo que a água chega mesmo à raiz.
+                        <span class="bolha-hora">10:33 • Lida</span>
                     </div>
                 </div>
-        </div>
+
+                <div class="caixa-entrada">
+                    <button class="btn-circular" title="Anexar ficheiro"><i class="fas fa-paperclip"></i></button>
+                    <input type="text" class="campo-texto" placeholder="Escreva a sua mensagem para o técnico...">
+                    <button class="btn-circular" style="background: var(--cor-primaria); color: #000; width: 45px; height: 45px;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- BARRA LATERAL DE CONTACTOS (DIREITA) -->
+            <aside class="barra-lateral-contactos">
+                <div class="pesquisa-profissional">
+                    <div class="procurar-box">
+                        <i class="fas fa-search" style="color: var(--texto-suave); font-size: 0.8rem;"></i>
+                        <input type="text" placeholder="Procurar conversas...">
+                    </div>
+                </div>
+
+                <div class="lista-scroll">
+                    <div class="card-contacto selecionado">
+                        <div class="avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Suporte+Tecnico&background=10b981&color=fff" alt="">
+                            <div class="ponto-online"></div>
+                        </div>
+                        <div class="info-resumo">
+                            <h4>Apoio GeoAgro</h4>
+                            <p>A recomendação é aguardar...</p>
+                        </div>
+                    </div>
+
+                    <div class="card-contacto">
+                        <div class="avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Logistica+Agro&background=3b82f6&color=fff" alt="">
+                        </div>
+                        <div class="info-resumo">
+                            <h4>Logística de Adubos</h4>
+                            <p>O motorista está a 15 min de distância.</p>
+                        </div>
+                    </div>
+
+                    <div class="card-contacto">
+                        <div class="avatar-wrapper">
+                            <img src="https://ui-avatars.com/api/?name=Eng+Agronomo&background=f59e0b&color=fff" alt="">
+                        </div>
+                        <div class="info-resumo">
+                            <h4>Eng. Ricardo</h4>
+                            <p>Enviou um relatório de solo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resumo rápido no fundo da lateral -->
+                <div style="padding: 20px; border-top: 1px solid var(--cor-borda); background: rgba(0,0,0,0.1);">
+                    <div style="display: flex; align-items: center; gap: 10px; font-size: 0.75rem; color: var(--texto-suave);">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Conversas Protegidas</span>
+                    </div>
+                </div>
+            </aside>
+
         </main>
+
    </section> 
 </body>
 </html>

@@ -1,63 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/definicoes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>Definições - GeoAgro</title>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>GeoAgro | Configurações Profissionais</title>
+    <style>
+        :root {
+            --bg-deep: #000000;
+            --sidebar-bg: #050505;
+            --surface: #ffffff;
+            --border: #1a1a1a;
+            --border-light: #e5e7eb;
+            --text-main: #111827;
+            --text-dim: #6b7280;
+            --accent: #10b981;
+            --accent-soft: rgba(16, 185, 129, 0.1);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg-deep);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR DE NAVEGAÇÃO --- */
+        .sidebar {
+            width: 320px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 0;
+        }
+
+        .header-brand {
+            padding: 0 40px;
+            margin-bottom: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-brand i { color: var(--accent); }
+
+        .settings-nav { flex: 1; padding: 0 20px; }
+        
+        .nav-group-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #444;
+            margin: 20px 0 10px 15px;
+            font-weight: 700;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 12px;
+            margin-bottom: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover { color: white; background: rgba(255,255,255,0.03); }
+        .nav-btn.active { color: white; background: var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+        .nav-btn.active i { color: var(--accent); }
+
+        /* --- CONTEÚDO PRINCIPAL (BRANCO PROFISSIONAL) --- */
+        .main-stage {
+            flex: 1;
+            background: #f9fafb; /* Cinza claríssimo para contraste */
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            padding: 60px 0;
+        }
+
+        .settings-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+
+        .title-area { margin-bottom: 40px; }
+        .title-area h2 { color: var(--text-main); font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
+        .title-area p { color: var(--text-dim); margin-top: 8px; font-size: 0.95rem; }
+
+        /* PAINEL BRANCO */
+        .white-panel {
+            background: var(--surface);
+            border-radius: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .panel-section { margin-bottom: 35px; }
+        .panel-section:last-child { margin-bottom: 0; }
+        .panel-section h3 { color: var(--text-main); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        
+        /* INPUTS PROFISSIONAIS */
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group label { font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; }
+        
+        .input-field {
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            background: #fcfcfc;
+            transition: all 0.2s;
+        }
+
+        .input-field:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 4px var(--accent-soft); }
+
+        /* TOGGLES / SWITCHES */
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .setting-row:last-child { border-bottom: none; }
+        .setting-info h4 { color: var(--text-main); font-size: 0.95rem; font-weight: 600; }
+        .setting-info p { color: var(--text-dim); font-size: 0.8rem; }
+
+        .switch {
+            width: 44px;
+            height: 24px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .switch::before {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .switch.active { background: var(--accent); }
+        .switch.active::before { left: 23px; }
+
+        /* BOTAO SALVAR */
+        .btn-save {
+            background: var(--text-main);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-save:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+    </style>
+</head>
 <body>
-    <aside class="menu">
-        <div class="perfil">
-            <img src="imagem/perfil.png" alt="Foto de Perfil" class="foto-perfil">
-            <h3 class="nome--agricultor">Rodrigo Muandumba</h3>
-            <p>Produtor Rural</p>
+
+    <aside class="sidebar">
+        <div class="header-brand">
+            <i class="fas fa-microchip"></i>
+            <span>GeoAgro Core</span>
         </div>
-        <nav class="navegacao">
-            <ul>
-                <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
-                <li><a href="trasportador.html"><i class="fas fa-truck"></i> Transportadores</a></li>
-                <li><a href="monitoramento.html"><i class="fas fa-seedling"></i> Monitoramento</a></li>
-                <li><a href="telademensagem.html"><i class="fas fa-comment-dots"></i> Mensagens</a></li>
-                <li><a href="marketplace.html"><i class="fas fa-shopping-cart"></i> Marketplace</a></li>
-                <li class="active"><a href="definicoes.html"><i class="fas fa-cog"></i> Definições</a></li>
-            </ul>
+
+        <nav class="settings-nav">
+            <div class="nav-group-label">Preferências de Conta</div>
+              <a href="home.html" class="nav-btn"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+            <a href="#" class="nav-btn active"><i class="fas fa-user-circle"></i> Perfil e Identidade</a>
+            <a href="#" class="nav-btn"><i class="fas fa-shield-check"></i> Segurança e Acesso</a>
+            <a href="#" class="nav-btn"><i class="fas fa-bell"></i> Gestão de Alertas</a>
+
+            <div class="nav-group-label">Configuração de Campo</div>
+            <a href="#" class="nav-btn"><i class="fas fa-satellite"></i> Sensores e IoT</a>
+            <a href="#" class="nav-item nav-btn"><i class="fas fa-map"></i> Mapeamento GPS</a>
+            
+            <div class="nav-group-label">Sistema</div>
+            
         </nav>
     </aside>
-    <main class="principal">
-        <header class="cabemoni">
-            <div class="cabeserch">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Pesquisar...">
-            </div>
-            <div class="cabemenu">
-                <button><i class="fas fa-bell"></i></button>
-                <button><i class="fas fa-user"></i></button>
-            </div>
-        </header>
 
-        <section class="conteudo">
+    <main class="main-stage">
+        <div class="settings-container">
+            <header class="title-area">
+                <h2>Perfil e Identidade</h2>
+                <p>Gerencie como a sua conta é visualizada no ecossistema GeoAgro.</p>
+            </header>
 
-            <div class="card-list">
-                <div class="card">
-                    <div class="card-img"><img src="" alt=""><i class="fas fa-user fa-5x card-icone"></i></div>
-                    <div class="card-tema"><h3>Perfil do Usuário</h3></div>
+            <section class="white-panel">
+                <div class="panel-section">
+                    <h3><i class="fas fa-id-card" style="color: #6366f1;"></i> Dados Pessoais</h3>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Nome Completo</label>
+                            <input type="text" class="input-field" value="Rodrigo Muandumba">
+                        </div>
+                        <div class="input-group">
+                            <label>Endereço de E-mail</label>
+                            <input type="email" class="input-field" value="rodrigo@geoagro.com">
+                        </div>
+                        <div class="input-group">
+                            <label>NIF / Identificação Fiscal</label>
+                            <input type="text" class="input-field" value="500 120 443">
+                        </div>
+                        <div class="input-group">
+                            <label>Telefone Prioritário</label>
+                            <input type="text" class="input-field" value="+244 923 000 000">
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-img"><img src="" alt=""><i class="fas fa-add fa-5x card-icone"></i></div>
-                    <div class="card-tema"><h3>Cadastrar campo</h3></div>
+
+                <div class="panel-section">
+                    <h3><i class="fas fa-globe" style="color: #10b981;"></i> Localização e Fuso</h3>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>País / Região</label>
+                            <select class="input-field">
+                                <option>Angola</option>
+                                <option>Brasil</option>
+                                <option>Portugal</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Fuso Horário</label>
+                            <select class="input-field">
+                                <option>WAT (UTC+1) Luanda</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="card-img"><img src="" alt=""><i class="fas fa-user fa-5x card-icone"></i></div>
-                    <div class="card-tema"><h3>Perfil do Usuário</h3></div>
+            </section>
+
+            <section class="white-panel">
+                <div class="panel-section">
+                    <h3><i class="fas fa-toggle-on" style="color: #f59e0b;"></i> Preferências do Sistema</h3>
+                    
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h4>Modo Noturno Automático</h4>
+                            <p>Alterna o tema com base no horário do nascer/pôr do sol local.</p>
+                        </div>
+                        <div class="switch active"></div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h4>Relatórios via WhatsApp</h4>
+                            <p>Receber resumo diário de humidade e pragas no telemóvel.</p>
+                        </div>
+                        <div class="switch"></div>
+                    </div>
+
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <h4>Sincronização em Nuvem</h4>
+                            <p>Backup automático dos perímetros de campo a cada 6 horas.</p>
+                        </div>
+                        <div class="switch active"></div>
+                    </div>
                 </div>
+            </section>
+
+            <div style="display: flex; justify-content: flex-end;">
+                <button class="btn-save">
+                    Guardar Alterações
+                    <i class="fas fa-check"></i>
+                </button>
             </div>
-        </section>
+        </div>
     </main>
-    
-</body>
 
+    <script>
+        // Funcionalidade visual simples para os switches
+        document.querySelectorAll('.switch').forEach(sw => {
+            sw.addEventListener('click', () => {
+                sw.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
 </html>

@@ -8,28 +8,35 @@
     <title>Transportadores - GeoAgro</title>
 </head>
 <body>
-    <aside class="menu">
-        <div class="perfil">
-            <img src="imagem/perfil.png" alt="Foto de Perfil" class="foto-perfil">
-            <h3 class="nome--agricultor">Domingos Papusseco</h3>
-            <p>Produtor Rural</p>
+    <!-- ASIDE RECUPERADO E MELHORADO -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon"><i class="fas fa-satellite"></i></div>
+            <span>Geo<em>Agro</em></span>
         </div>
-        <nav class="navegacao">
-            <ul>
-                <li><a href="home.html"><i class="fas fa-home"></i> Início</a></li>
-                <li class="active"><a href="#"><i class="fas fa-truck"></i> Transportadores</a></li>
-                <li><a href="monitoramento.html"><i class="fas fa-seedling"></i> Monitoramento</a></li>
-                <li><a href="telademensagem.html"><i class="fas fa-comment-dots"></i> Mensagens</a></li>
-                <li><a href="marketplace.html"><i class="fas fa-shopping-cart"></i> Marketplace</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Definições</a></li>
-            </ul>
-        </nav>
+
+        <div class="nav-section">
+            <div class="nav-label">Principal</div>
+            <a href="home.html" class="nav-item "><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
+            <a href="monitoramento.html" class="nav-item"><i class="fas fa-layer-group"></i> <span>Sensores</span></a>
+            <a href="trasportador.html" class="nav-item active"><i class="fas fa-truck-moving"></i> <span>Logística de Fretes</span></a>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-label">Negócios</div>
+            <a href="marketplace.html" class="nav-item"><i class="fas fa-store"></i> <span>esposição</span></a>
+            <a href="telademensagem.html" class="nav-item"><i class="fas fa-comments"></i> <span>Mensagens</span></a>
+        </div>
+
+        <div class="nav-section" style="margin-top: auto;">
+            <a href="definicoes.html" class="nav-item"><i class="fas fa-user-gear"></i> <span>Definições</span></a>
+            <a href="#" class="nav-item" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
+        </div>
     </aside>
     <main class="principal">
         <header class="cabe-transp">
             <div class="busca-transp">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Pesquisar transportador...">
+             <h1>Solicitar Transporte</h1> 
             </div>
             <div class="user-actions">
                 <button><i class="fas fa-bell"></i></button>
