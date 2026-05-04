@@ -46,9 +46,38 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* um ponto de luz de geolocalização */
-.brand-box::before {
-    content: '';
+
+.navegacao li.active a, .navegacao li a:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: var(--white);
+    border-left: 4px solid var(--vibrant-green);
+}
+
+
+.principal {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    margin-top: 60px;
+    /* Ajuste para o header fixo */
+}
+
+.feed-produtos {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    background: var(--bg-light);
+    margin-left: 280px;
+}
+
+.header-market {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+
+.btn-carrinho .badge {
     position: absolute;
     top: 4px;
     right: 4px;

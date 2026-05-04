@@ -37,7 +37,7 @@ body {
 .perfil {
     text-align: center;
     padding: 0 20px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .foto-perfil {
@@ -65,22 +65,24 @@ body {
 }
 
 .navegacao li.active a {
-    background-color: rgba(255,255,255,0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     border-left: 4px solid var(--vibrant-green);
 }
 
-/* Painel Principal com Imagem de Fundo */
+.navegacao li.active a, .navegacao li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--white);
+    border-left: 4px solid var(--vibrant-green);
+}
+
 .principal {
     flex: 1;
-    /* Imagem de fundo com overlay escuro para contraste */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('imagem/imagemdocampo.png'); /* Ajuste para o caminho da imagem do campo */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('imagem/imagemdocampo.png');
     background-size: cover;
     background-position: center;
     overflow-y: auto;
 }
 
-/* Header do Monitoramento */
 .cabemoni {
     padding: 15px 30px;
     display: flex;
@@ -109,7 +111,9 @@ body {
     outline: none;
 }
 
-.cabeserch input::placeholder { color: rgba(255,255,255,0.7); }
+.cabeserch input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
 
 .cabemenu button {
     background: none;
@@ -120,27 +124,25 @@ body {
     cursor: pointer;
 }
 
-.section{
+.section {
     margin: 10px;
     padding: 10px;
     display: flex;
 }
 
-.card-list{
+.card-list {
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
 }
 
-
-
-/* O Card */
-.card {
+.card{
     margin: 10px;
     position: relative;
     width: 30.3%;
     height: 300px;
-    background: rgba(255, 255, 255, 0.1); /* Transparência */
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparência */
     border-radius: 15px;
     overflow: hidden;
     display: flex;
@@ -148,40 +150,61 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); /* Efeito de vidro */
+    backdrop-filter: blur(10px);
+    /* Efeito de vidro */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     transition: 0.5s;
     cursor: pointer;
 }
 
-.card:hover{
+.card:hover {
+    i, .card-tema, a{
+        transition: 0.5s;
+        color: var(--vibrant-green);
+    }
+
+    border: 1px solid var(--primary-green);
     transform: translateY(-5px);
 }
 
-.card-img{
+.card-img {
     display: flex;
-    justify-content: center;  /* Alinha horizontalmente */
+    justify-content: center;
+    /* Alinha horizontalmente */
     align-items: center;
     width: 100%;
     height: 70%;
     object-fit: cover;
 }
 
-.card-img img{
+.card-img img {
     justify-content: center;
 
 }
 
-.card-tema{
+.card-tema {
     width: 100%;
-    border-top:1px solid rgba(255, 255, 255, 0.2) ;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     height: 20%;
-    justify-content: center;  /* Alinha horizontalmente */
+    justify-content: center;
+    /* Alinha horizontalmente */
     align-items: center;
     display: flex;
     color: white;
 }
 
-.card-icone{
+.card-tema a{
+    list-style: none;
+    text-decoration: none;
     color: white;
+}
+
+.card-icone {
+    color: white;
+}
+
+.card:hover,
+.card-icone:hover,
+.card-tema h3:hover {
+    color: var(--primary-green);
 }

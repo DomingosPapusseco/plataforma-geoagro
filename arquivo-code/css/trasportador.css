@@ -225,37 +225,39 @@ body {
 
 .perfil {
     text-align: center;
-    padding: 0 20px 20px;
+    padding: 0 20px 15px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .foto-perfil {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border: 2px solid var(--vibrant-green);
+    border: 3px solid var(--primary-green);
     margin-bottom: 10px;
     object-fit: cover;
 }
 
-.perfil h3 { font-size: 1rem; color: white; margin-bottom: 5px; }
-.perfil p { font-size: 0.8rem; color: var(--vibrant-green); font-weight: 600; text-transform: uppercase; }
+.navegacao ul {
+    list-style: none;
+    margin-top: 20px;
+}
 
-.navegacao ul { list-style: none; margin-top: 20px; }
 .navegacao li a {
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 15px 25px;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     transition: 0.3s;
 }
 
 .navegacao li.active a {
-    background: rgba(255,255,255,0.05);
+    background-color: rgba(255,255,255,0.05);
     border-left: 4px solid var(--vibrant-green);
 }
+
 
 /* Painel Principal */
 .principal {

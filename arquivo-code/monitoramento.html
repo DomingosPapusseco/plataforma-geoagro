@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/monitoramento.css">
+    <link rel="stylesheet" href="css/monitoramento.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>monitoramento-geoagro</title>
 </head>
+
 <body>
+
     <!-- ASIDE RECUPERADO E MELHORADO -->
     <aside class="sidebar">
         <div class="brand">
@@ -33,125 +36,139 @@
             <a href="#" class="nav-item" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i> <span>Sair</span></a>
         </div>
     </aside>
-        <main class="principal">
-           <header class="cabemoni">
-            <div class="cabe">
-                 <h1>Monitoramento</h1>
+
+    <main class="principal">
+        <header class="cabemoni">
+            <div class="cabeserch">
+                      <h2 style="color: white;font-size: medium;">Monitoramento</h2>
+
             </div>
             <div class="cabemenu">
                 <button><i class="fas fa-bell"></i></button>
                 <button><i class="fas fa-user"></i></button>
             </div>
-           </header> 
-              <section class="conteudo">
-                <div class="titulo-secao">
-                    <p>Status em tempo real</p>
-                </div>
 
-                <div class="abas-campos">
-                    <button class="btn-campo active">Campo 1</button>
-                    <button class="btn-campo">Campo 2</button>
-                </div>
 
-                <div class="monitoramento">
-                 <div class="card-monitor active" onclick="mostrarEstatistica('solo', this)">
-                      <i class="fas fa-mountain"></i>
-                      <h3>Solo</h3>
-                      <p>Saudável</p>
-                 </div>
-                 <div class="card-monitor" onclick="mostrarEstatistica('pragas', this)">
-                      <i class="fas fa-bug"></i>
-                      <h3>Pragas</h3>
-                      <p>Nenhuma detectada</p>
-                 </div>
-                 <div class="card-monitor" onclick="mostrarEstatistica('temp', this)">
-                      <i class="fas fa-thermometer-half"></i>
-                      <h3>Temperatura</h3>
-                      <p>28°C (Normal)</p>
-                 </div>
-                    <div class="card-monitor" onclick="mostrarEstatistica('humidade', this)">
-                        <i class="fas fa-tint"></i>
-                        <h3>Humidade</h3>
-                        <p>Adequada</p>
-                    </div>
-                 <div class="card-monitor" onclick="mostrarEstatistica('clima', this)">
-                      <i class="fas fa-cloud-sun"></i>
-                      <h3>Clima</h3>
-                        <p>Normal</p>
-                      
-                 </div>
+
+        </header>
+        <section class="conteudo">
+            <div class="titulo-secao">
+               
+                <p>Status em tempo real</p>
+            </div>
+
+
+            <div class="abas-campos">
+                <button class="btn-campo active">Campo 1</button>
+                <button class="btn-campo">Campo 2</button>
+            </div>
+
+            <div class="monitoramento">
+                <div class="card-monitor active" onclick="mostrarEstatistica('solo', this)">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Solo</h3>
+                    <p>Saudável</p>
                 </div>
-                <div class="estatitica-monitoramento" id="container-estatisticas">
-                    <div class="grid-estatisticas">
-                        <!-- Card 1: Nutrientes NPK -->
-                        <div class="card-detalhe">
-                            <div class="header-detalhe">
-                                <h3><i class="fas fa-seedling"></i> Saúde da Terra</h3>
-                                <span class="tag-campo">Nutrientes</span>
-                            </div>
-                            <div class="corpo-estatistica">
-                                <div class="npk-bars">
-                                    <div class="npk-item">
-                                        <div class="bar-container"><div class="bar-fill" style="height: 80%;"></div></div>
-                                        <span>Folhas</span>
-                                    </div>
-                                    <div class="npk-item">
-                                        <div class="bar-container"><div class="bar-fill" style="height: 65%;"></div></div>
-                                        <span>Raízes</span>
-                                    </div>
-                                    <div class="npk-item">
-                                        <div class="bar-container"><div class="bar-fill" style="height: 45%;"></div></div>
-                                        <span>Frutos</span>
-                                    </div>
-                                </div>
-                                <div class="metricas-grid">
-                                    <div class="metrica"><span>Qualidade</span><strong>Boa</strong></div>
-                                    <div class="metrica"><span>Adubo</span><strong>Suficiente</strong></div>
-                                </div>
-                            </div>
+                <div class="card-monitor" onclick="mostrarEstatistica('pragas', this)">
+                    <i class="fas fa-bug"></i>
+                    <h3>Pragas</h3>
+                    <p>Nenhuma detectada</p>
+                </div>
+                <div class="card-monitor" onclick="mostrarEstatistica('temp', this)">
+                    <i class="fas fa-thermometer-half"></i>
+                    <h3>Temperatura</h3>
+                    <p>28°C (Normal)</p>
+                </div>
+                <div class="card-monitor" onclick="mostrarEstatistica('humidade', this)">
+                    <i class="fas fa-tint"></i>
+                    <h3>Humidade</h3>
+                    <p>Adequada</p>
+                </div>
+                <div class="card-monitor" onclick="mostrarEstatistica('clima', this)">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3>Clima</h3>
+                    <p>Normal</p>
+
+                </div>
+            </div>
+            <div class="estatitica-monitoramento" id="container-estatisticas">
+                <div class="grid-estatisticas">
+                    <!-- Card 1: Nutrientes NPK -->
+                    <div class="card-detalhe">
+                        <div class="header-detalhe">
+                            <h3><i class="fas fa-seedling"></i> Saúde da Terra</h3>
+                            <span class="tag-campo">Nutrientes</span>
                         </div>
-
-                        <!-- Card 2: Sensores de Ambiente -->
-                        <div class="card-detalhe">
-                            <div class="header-detalhe">
-                                <h3><i class="fas fa-sun"></i> Luz e Ar</h3>
-                                <div class="live-indicator"><span class="dot"></span> AGORA</div>
+                        <div class="corpo-estatistica">
+                            <div class="npk-bars">
+                                <div class="npk-item">
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="height: 80%;"></div>
+                                    </div>
+                                    <span>Folhas</span>
+                                </div>
+                                <div class="npk-item">
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="height: 65%;"></div>
+                                    </div>
+                                    <span>Raízes</span>
+                                </div>
+                                <div class="npk-item">
+                                    <div class="bar-container">
+                                        <div class="bar-fill" style="height: 45%;"></div>
+                                    </div>
+                                    <span>Frutos</span>
+                                </div>
                             </div>
-                            <div class="corpo-estatistica">
-                                <div class="grafico-svg">
-                                    <svg viewBox="0 0 200 60">
-                                        <polyline points="0,50 20,40 40,45 60,20 80,30 100,10 120,25 140,35 160,15 180,45 200,30" 
-                                                  fill="none" stroke="var(--vibrant-green)" stroke-width="2" />
-                                    </svg>
-                                </div>
-                                <div class="metricas-grid">
-                                    <div class="metrica"><span>Sol</span><strong>Forte</strong></div>
-                                    <div class="metrica"><span>Ar</span><strong>Limpo</strong></div>
-                                    <div class="metrica"><span>Saúde</span><strong>Excelente</strong></div>
-                                </div>
+                            <div class="metricas-grid">
+                                <div class="metrica"><span>Qualidade</span><strong>Boa</strong></div>
+                                <div class="metrica"><span>Adubo</span><strong>Suficiente</strong></div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Card 2: Sensores de Ambiente -->
+                    <div class="card-detalhe">
+                        <div class="header-detalhe">
+                            <h3><i class="fas fa-sun"></i> Luz e Ar</h3>
+                            <div class="live-indicator"><span class="dot"></span> AGORA</div>
+                        </div>
+                        <div class="corpo-estatistica">
+                            <div class="grafico-svg">
+                                <svg viewBox="0 0 200 60">
+                                    <polyline
+                                        points="0,50 20,40 40,45 60,20 80,30 100,10 120,25 140,35 160,15 180,45 200,30"
+                                        fill="none" stroke="var(--vibrant-green)" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <div class="metricas-grid">
+                                <div class="metrica"><span>Sol</span><strong>Forte</strong></div>
+                                <div class="metrica"><span>Ar</span><strong>Limpo</strong></div>
+                                <div class="metrica"><span>Saúde</span><strong>Excelente</strong></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </section>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-        <script>
-            function mostrarEstatistica(tipo, elemento) {
-                // Remove a classe 'active' de todos os cards
-                const cards = document.querySelectorAll('.card-monitor');
-                cards.forEach(card => card.classList.remove('active'));
-                
-                // Adiciona a classe 'active' ao card clicado
-                elemento.classList.add('active');
+    <script>
+        function mostrarEstatistica(tipo, elemento) {
+            // Remove a classe 'active' de todos os cards
+            const cards = document.querySelectorAll('.card-monitor');
+            cards.forEach(card => card.classList.remove('active'));
 
-                const container = document.getElementById('container-estatisticas');
-                let htmlContent = '';
+            // Adiciona a classe 'active' ao card clicado
+            elemento.classList.add('active');
 
-                // Define o conteúdo baseado no tipo clicado
-                if (tipo === 'solo') {
-                    htmlContent = `
+            const container = document.getElementById('container-estatisticas');
+            let htmlContent = '';
+
+            // Define o conteúdo baseado no tipo clicado
+            if (tipo === 'solo') {
+                htmlContent = `
                         <div class="grid-estatisticas">
                             <div class="card-detalhe">
                                 <div class="header-detalhe">
@@ -182,8 +199,8 @@
                                 </div>
                             </div>
                         </div>`;
-                } else if (tipo === 'pragas') {
-                    htmlContent = `
+            } else if (tipo === 'pragas') {
+                htmlContent = `
                         <div class="grid-estatisticas">
                             <div class="card-detalhe">
                                 <div class="header-detalhe">
@@ -200,8 +217,8 @@
                                 </div>
                             </div>
                         </div>`;
-                } else if (tipo === 'temp') {
-                    htmlContent = `
+            } else if (tipo === 'temp') {
+                htmlContent = `
                         <div class="grid-estatisticas">
                             <div class="card-detalhe">
                                 <div class="header-detalhe">
@@ -218,9 +235,9 @@
                                 </div>
                             </div>
                         </div>`;
-                } else {
-                    // Fallback para outros tipos (Humidade/Clima)
-                    htmlContent = `
+            } else {
+                // Fallback para outros tipos (Humidade/Clima)
+                htmlContent = `
                         <div class="card-detalhe">
                             <div class="header-detalhe">
                                 <h3><i class="fas fa-info-circle"></i> Informações Adicionais</h3>
@@ -229,10 +246,11 @@
                                 <p>Dados sendo carregados para este setor do campo...</p>
                             </div>
                         </div>`;
-                }
-
-                container.innerHTML = htmlContent;
             }
-        </script>
+
+            container.innerHTML = htmlContent;
+        }
+    </script>
 </body>
+
 </html>
