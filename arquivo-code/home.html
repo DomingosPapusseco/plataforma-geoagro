@@ -3,297 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>GeoAgro | Dashboard Intelligence</title>
-    <style>
-        :root {
-            --bg: #000000;
-            --surface: #0a0a0a;
-            --surface-light: #161617;
-            --border: #1f1f1f;
-            --text-main: #ffffff;
-            --text-dim: #a1a1aa;
-            --accent: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.1);
-            --danger: #ef4444;
-            --warn: #f59e0b;
-        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, sans-serif;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* --- ASIDE: MANTIDO CONFORME SOLICITADO --- */
-        .sidebar {
-            width: 280px;
-            background: var(--surface);
-            border-right: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            padding: 32px 0;
-            flex-shrink: 0;
-        }
-
-        .brand {
-            padding: 0 32px;
-            margin-bottom: 48px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-icon {
-            background: var(--accent);
-            color: var(--bg);
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .brand span {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .brand span em { color: var(--accent); font-style: normal; }
-
-        .nav-section { padding: 0 16px; margin-bottom: 32px; }
-        .nav-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: var(--text-dim);
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-            padding-left: 16px;
-        }
-
-        .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border-radius: 12px;
-            margin-bottom: 4px;
-            transition: 0.2s;
-        }
-
-        .nav-item i { width: 20px; font-size: 1.1rem; }
-        .nav-item:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
-        .nav-item.active { color: var(--accent); background: var(--accent-glow); }
-
-        /* --- MAIN WRAPPER: NOVO DESIGN SOCIAL-ENTERPRISE --- */
-        .main-wrapper {
-            flex: 1;
-            overflow-y: auto;
-            padding: 32px 48px;
-            display: flex;
-            flex-direction: column;
-            background: var(--bg);
-        }
-
-        /* Top Header Estilo Moderno */
-        .top-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .user-greeting h1 { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
-        .user-greeting p { color: var(--text-dim); font-size: 14px; margin-top: 4px; }
-
-        .quick-actions { display: flex; gap: 8px; }
-        .btn-action {
-            background: var(--surface-light);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: filter 0.2s;
-        }
-        .btn-action:hover { filter: brightness(1.3); }
-        .rega-highlight { background: var(--accent); color: var(--bg); border: none; }
-
-        /* AI Banner Slim */
-        .ai-banner {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--accent);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 32px;
-        }
-
-        .ai-icon {
-            font-size: 1.4rem;
-            color: var(--accent);
-            margin-top: 2px;
-        }
-
-        .ai-text h4 { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
-        .ai-text p { font-size: 14px; line-height: 1.5; color: #d4d4d8; }
-
-        /* Dashboard Layout */
-        .dashboard-layout {
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 32px;
-        }
-
-        /* Cards Estilo "Feed/Social" */
-        .section-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 24px;
-        }
-
-        .card-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-header h3 { font-size: 16px; font-weight: 600; }
-
-        /* Metrics */
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border); /* Cria as linhas divisórias */
-        }
-
-        .metric-card {
-            background: var(--surface);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .metric-label { font-size: 12px; font-weight: 500; color: var(--text-dim); margin-bottom: 12px; }
-        .metric-value { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-        .metric-value small { font-size: 14px; color: var(--text-dim); }
-        .metric-status { font-size: 12px; display: flex; align-items: center; gap: 6px; }
-
-        /* Status dos Lotes Estilo Listagem Limpa */
-        .lote-item {
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border);
-            transition: background 0.2s;
-        }
-        .lote-item:last-child { border-bottom: none; }
-        .lote-item:hover { background: rgba(255,255,255,0.02); }
-
-        .lote-info b { font-size: 14px; color: #fff; display: block; margin-bottom: 2px; }
-        .lote-info p { font-size: 12px; color: var(--text-dim); }
-
-        .lote-badge {
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .badge-healthy { background: rgba(16, 185, 129, 0.1); color: var(--accent); }
-        .badge-need { background: rgba(245, 158, 11, 0.1); color: var(--warn); }
-
-        /* Weather Panel Moderno */
-        .weather-panel {
-            padding: 24px;
-            background: linear-gradient(180deg, #111 0%, #000 100%);
-            text-align: center;
-        }
-
-        .weather-temp { font-size: 48px; font-weight: 700; margin: 12px 0; letter-spacing: -1px; }
-        .weather-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 24px;
-            text-align: left;
-        }
-        .weather-item { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-dim); }
-        .weather-item i { color: #fff; width: 14px; }
-
-        /* Negociações Feed Estilo "Activity" */
-        .feed-container { padding: 8px 0; }
-        .feed-item {
-            display: flex;
-            gap: 12px;
-            padding: 16px 24px;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .feed-item:hover { background: rgba(255,255,255,0.02); }
-        .feed-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%; /* Redondo como Insta/FB */
-            background: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 12px;
-            flex-shrink: 0;
-            border: 1px solid var(--border);
-        }
-        .feed-content p { font-size: 13px; line-height: 1.4; color: #e4e4e7; }
-        .feed-content b { color: #fff; }
-        .feed-content small { color: var(--text-dim); font-size: 11px; margin-top: 4px; display: block; }
-
-        .btn-full {
-            width: calc(100% - 48px);
-            margin: 16px 24px 24px;
-            background: var(--surface-light);
-            border: 1px solid var(--border);
-            color: #fff;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-        }
-
-        /* Status Helpers */
-        .status-up { color: var(--accent); }
-        .status-warn { color: var(--warn); }
-
-    </style>
 </head>
 <body>
 
@@ -308,13 +22,12 @@
             <div class="nav-label">Principal</div>
             <a href="home.html" class="nav-item active"><i class="fas fa-chart-line"></i> <span>Dashboard</span></a>
             <a href="monitoramento.html" class="nav-item"><i class="fas fa-layer-group"></i> <span>Sensores</span></a>
-            <a href="trasportador.html" class="nav-item"><i class="fas fa-truck-moving"></i> <span>Logística de Fretes</span></a>
+            <a href="trasportador.html" class="nav-item"><i class="fas fa-truck-moving"></i> <span>Logística </span></a>
         </div>
 
         <div class="nav-section">
             <div class="nav-label">Negócios</div>
-            <a href="marketplace.html" class="nav-item"><i class="fas fa-store"></i> <span>Exposição</span></a>
-            <a href="telademensagem.html" class="nav-item"><i class="fas fa-comments"></i> <span>Mensagens</span></a>
+            <a href="plantas.html" class="nav-item"><i class="fas fa-leaf"></i> </i> <span>plantação</span></a>
         </div>
 
         <div class="nav-section" style="margin-top: auto;">
@@ -332,8 +45,8 @@
                 <p>Status atualizado em tempo real para a Unidade Joaquim.</p>
             </div>
             <div class="quick-actions">
-                <button class="btn-action"><i class="fas fa-plus"></i> Novo Lote</button>
-                <button class="btn-action rega-highlight"><i class="fas fa-bolt"></i> Ação de Rega</button>
+                
+                <button class="btn-action rega-highlight"><i class="fas fa-plus"></i>  campo</button>
             </div>
         </header>
 
@@ -375,27 +88,27 @@
 
                 <div class="section-card">
                     <div class="card-header">
-                        <h3>Status das Culturas</h3>
+                        <h3>Status dos campos</h3>
                         <a href="#" style="color: var(--accent); font-size: 12px; text-decoration: none; font-weight: 600;">Expandir Mapa</a>
                     </div>
                     <div class="lote-list">
                         <div class="lote-item">
                             <div class="lote-info">
-                                <b>Lote Norte - Tomate Industrial</b>
+                                <b>campo norte - Tomate Industrial</b>
                                 <p>Maturação • Colheita em 4 dias</p>
                             </div>
                             <span class="lote-badge badge-healthy">Saudável</span>
                         </div>
                         <div class="lote-item">
                             <div class="lote-info">
-                                <b>Lote Sul - Batata Doce</b>
+                                <b>campo Sul - Batata Doce</b>
                                 <p>Crescimento • Humidade crítica detetada</p>
                             </div>
                             <span class="lote-badge badge-need">Rega Pendente</span>
                         </div>
                         <div class="lote-item">
                             <div class="lote-info">
-                                <b>Zona 03 - Preparação</b>
+                                <b>campo Zona 03 - Preparação</b>
                                 <p>Solo em repouso para milho (12 dias)</p>
                             </div>
                             <span class="lote-badge" style="background: rgba(255,255,255,0.05); color: #71717a;">Inativo</span>

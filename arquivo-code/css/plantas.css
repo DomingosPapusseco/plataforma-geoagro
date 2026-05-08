@@ -1,0 +1,90 @@
+ :root {
+            --bg: #000000;
+            --surface: #0a0a0a;
+            --surface-light: #161617;
+            --border: #1f1f1f;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.1);
+            --danger: #ef4444;
+            --warn: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- ASIDE: MANTIDO CONFORME SOLICITADO --- */
+        .sidebar {
+            width: 280px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            padding: 32px 0;
+            flex-shrink: 0;
+        }
+
+        .brand {
+            padding: 0 32px;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            background: var(--accent);
+            color: var(--bg);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand span {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand span em { color: var(--accent); font-style: normal; }
+
+        .nav-section { padding: 0 16px; margin-bottom: 32px; }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            padding-left: 16px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 12px;
+            margin-bottom: 4px;
+            transition: 0.2s;
+        }
+
+        .nav-item i { width: 20px; font-size: 1.1rem; }
+        .nav-item:hover { color: var(--text-main); background: rgba(255, 255, 255, 0.05); }
+        .nav-item.active { color: var(--accent); background: var(--accent-glow); }
+
