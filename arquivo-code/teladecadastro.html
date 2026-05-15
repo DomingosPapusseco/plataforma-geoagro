@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/teladelogin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <meta name="description"
         content="Acesse o GeoAgro, sua plataforma completa de monitoramento agrícola e agricultura de precisão. Gerencie suas colheitas com tecnologia.">
@@ -46,41 +47,48 @@
                         <!-- Campo oculto para enviar o tipo de usuário ao servidor -->
                         <input type="hidden" name="user_type" id="user-type-input">
 
-                    <div class="input-group">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" placeholder="Digite seu nome completo" required>
-                    </div>
+                        <div class="input-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" placeholder="Digite seu nome completo" required>
+                        </div>
 
-                    <div class="input-group">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" placeholder="Digite sua senha" required>
-                    </div>
-                         <div class="input-group">
-                        <label for="confirmasenha">Confirmar Senha</label>
-                        <input type="password" id="confirmasenha" placeholder="Digite sua senha novamente" required>
-                    </div>
+                        <div class="input-group">
+                            <label for="name">Email</label>
+                            <input type="text" id="name" placeholder="Digite seu email" required>
+                        </div>
 
-                    <div class="form-options">
-                        <label>
-                            <input type="checkbox" name="remember"> Aceitar <a href="#">Aceitar Termos e Condições</a>
-                        </label>
-                       
-                    </div>
+                        <div class="input-group">
+                            <label for="password">Senha</label>
+                            <input type="password" id="password" placeholder="Digite sua senha" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirmasenha">Confirmar Senha</label>
+                            <input type="password" id="confirmasenha" placeholder="Confirmar a senha" required>
+                        </div>
 
-                    <button type="submit" class="btn-main">Cadastrar</button>
+                        <div class="form-options">
+                            <label>
+                                <input type="checkbox" name="remember"> <a href="#">Aceitar Termos e
+                                    Condições da GeoAgro</a>
+                            </label>
 
-                    <p>Já tem conta? <a href="teladelogin.html">Entre aqui</a></p>
+                        </div>
 
-                    <hr>
-                    <p>criar conta com</p>
+                        <button type="submit" class="btn-main">Cadastrar</button>
 
-                    <div class="imagem-google">
-                        <a href="https://accounts.google.com" target="_blank" aria-label="Entrar com conta do Google">
-                            <img src="imagem/google.png" alt="Entrar com Google" class="google">
-                        </a>
-                    </div>
+                        <p>Já tem conta? <a href="teladelogin.html">Entre aqui</a></p>
 
-                </form>
+                        <hr>
+                        <p>criar conta com</p>
+
+                        <div class="imagem-google">
+                            <a href="https://accounts.google.com" target="_blank"
+                                aria-label="Entrar com conta do Google">
+                                <img src="imagem/google.png" alt="Entrar com Google" class="google">
+                            </a>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </section>
@@ -90,7 +98,7 @@
         function selectType(type) {
             // Define o tipo escolhido no campo oculto do formulário
             document.getElementById('user-type-input').value = type;
-            
+
             // Transição de telas: esconde a seleção e mostra o formulário
             document.getElementById('selection-step').classList.add('hidden');
             document.getElementById('registration-step').classList.remove('hidden');

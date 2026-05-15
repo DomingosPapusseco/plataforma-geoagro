@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <title>plantação</title>
+    <title>GeoAgro Transportador | Dashboard</title>
 </head>
 
 <body>
-    <!-- ASIDE (MANTIDO) -->
     <aside class="sidebar">
         <div class="brand">
             <div class="brand-icon"><i class="fas fa-satellite"></i></div>
@@ -23,11 +22,14 @@
             <div class="nav-label">Principal</div>
             <a href="home-transportador.html" class="nav-item active"><i class="fas fa-chart-line"></i>
                 <span>Dashboard</span></a>
+            <a href="solicitacoes-trasporte.html" class="nav-item"><i class="fas fa-bell"></i>
+                <span>Solicitações</span></a>
+            <a href="home-transportador.html" class="nav-item"><i class="fa-solid fa-lightbulb"></i>
+                <span>Recomendações</span></a>
         </div>
 
-
         <div class="nav-section" style="margin-top: auto;">
-            <a href="definicoes.html" class="nav-item"><i class="fas fa-user-gear"></i><span>Definições</span></a>
+            <a href="../definicoes.html" class="nav-item"><i class="fas fa-user-gear"></i><span>Definições</span></a>
             <a href="sair.html" class="nav-item" style="color: var(--danger);"><i class="fas fa-sign-out-alt"></i>
                 <span>Sair</span></a>
         </div>
@@ -35,19 +37,44 @@
     <main>
         <header>
             <div class="search-container">
-                <i class="fas fa-search icon"></i> <!-- Corrigido de 'cfas' para 'fas' -->
+                <i class="fas fa-search icon"></i>
                 <input type="text" placeholder="Pesquisar...">
-            </div>
-
-            <div class="cabemenu">
-                <button><i class="fas fa-bell"></i></button>
-                <button><i class="fas fa-user"></i></button>
             </div>
         </header>
         <section class="conteudoPrincipal">
-            <H1>Esta e a tela do Transportador</H1>
+            <div class="card-main">
+                <div class="card">
+                    <div class="grafico-container">
+                        <canvas id="graficoProdutividade"></canvas>
+                    </div>
+
+                    <div class="card-titulo">
+                        <h2>Produtividade do trabalho:</h2>
+                        <span>Últimos 7 dias</span>
+                    </div>
+                    <div class="card-info">
+                        <h3><strong>Boa</strong></h3>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="grafico-container">
+                        <canvas id="graficoTrabalho"></canvas>
+                    </div>
+
+                    <div class="card-titulo">
+                        <h2>Solicitações Aceites:</h2>
+                    </div>
+                    <div class="card-info">
+                        <h3 id="quantidadeTarefas"></h3><p>de</p><h3 id="quantidadeFalta"></h3>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JS/script_transportador.js"></script>
 </body>
 
 </html>
