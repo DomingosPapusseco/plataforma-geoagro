@@ -69,7 +69,7 @@ label {
 }
 
 input[type="email"],
-input[type="password"],
+input[type="password"],input[type="tel"],input[type="date"],
 input[type="text"] {
     width: 100%;
     height: 35px;
@@ -79,6 +79,16 @@ input[type="text"] {
     outline: none;
     transition: all 0.3s ease;
     background-color: #f9f9f9; /* Fundo mais claro e moderno */
+}
+#genero{
+        width: 100%;
+    height: 35px;
+    
+      border: 1px solid #ddd;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9; /* Fundo mais claro e moderno */  
 }
 
 input:focus {
